@@ -19,13 +19,14 @@ Route::get('/home', function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/expenses', [ExpenseController::class,'index'])->name('data');
-    Route::get('/create', [ExpenseController::class,'create'])->name('create');
-    Route::post('/store', [ExpenseController::class,'store'])->name('store');
+    Route::get('/', [ExpenseController::class,'index'])->name('data');
+    Route::get('/addexpense', [ExpenseController::class,'create'])->name('expense.add');
+    Route::post('/store', [ExpenseController::class,'store'])->name('expense.save');
     Route::get('/edit/{id}', [ExpenseController::class,'edit'])->name('edit');
     Route::post('/update/{id}', [ExpenseController::class,'update'])->name('update');
     Route::get('/delete/{id}', [ExpenseController::class,'delete'])->name('delete');
 });
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

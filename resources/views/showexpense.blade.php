@@ -26,7 +26,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-row">
-            <table class="bg-primary text-light" >
+            <table class="bg-danger text-light" >
                 <tr>
                     <td>ID</td>
                     <td>description</td>
