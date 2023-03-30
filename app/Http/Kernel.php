@@ -24,12 +24,13 @@ class Kernel extends HttpKernel
     ];
 
     /**
-     * The application's route middleware groups.
+     * The application's foute middleware groups.
      *
      * @var array<string, array<int, class-string|string>>
      */
     protected $middlewareGroups = [
         'web' => [
+            \App\Http\Middleware\expense::class,
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,

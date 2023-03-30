@@ -18,12 +18,15 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
+
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [ExpenseController::class,'index'])->name('data');
     Route::get('/addexpense', [ExpenseController::class,'create'])->name('expense.add');
     Route::post('/store', [ExpenseController::class,'store'])->name('expense.save');
-    Route::get('/edit/{id}', [ExpenseController::class,'edit'])->name('edit');
-    Route::post('/update/{id}', [ExpenseController::class,'update'])->name('update');
+    Route::get('/edit/{id}', [ExpenseController::class,'edit'])->name('expense.edit');
+    Route::post('/update',[ExpenseController::class,'update'])->name('expense.update');
+    Route::delete('/delete/{id}',[ExpenseController::class,'delete'])->name('expense.delete');
     Route::get('/delete/{id}', [ExpenseController::class,'delete'])->name('delete');
 });
 
