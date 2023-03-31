@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ExpenseController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,18 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/update',[ExpenseController::class,'update'])->name('expense.update');
     Route::delete('/delete/{id}',[ExpenseController::class,'delete'])->name('expense.delete');
     Route::get('/delete/{id}', [ExpenseController::class,'delete'])->name('delete');
+
+
+
+    
+   
 });
+Route::get('/hamza', function () {
+    return Inertia::render('Test'); // This will get component Test.jsx from the resources/js/Pages/Test.jsx
+});
+
+
+
 
 Auth::routes();
 

@@ -31,7 +31,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-row">
-            <table class="bg-danger text-light" >
+            <table class="bg-gray text-dark" >
                 <tr>
                     <td>ID</td>
                     <td>description</td>
